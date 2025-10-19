@@ -1,4 +1,120 @@
+:root {
+    --bg: #0a1f44;
+    --bg-2: #153a7b;
+    --card: #1f4ea3;
+    --text: #e8f0ff;
+    --muted: #bcd0ff;
+    --ring: rgba(255, 255, 255, .25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #d7d7d7;
-    color: black;
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background: radial-gradient(1200px 600px at 50% -200px, #274ea3 0%, var(--bg) 55%) no-repeat,
+        linear-gradient(var(--bg-2), var(--bg));
+    min-height: 100dvh;
+}
+
+.site-header {
+    text-align: center;
+    padding: 48px 16px 24px;
+}
+
+.title {
+    font-size: 48px;
+    margin: 0 0 8px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, .35);
+}
+
+.subtitle {
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: var(--muted);
+}
+
+.powered {
+    margin: 10px 0 18px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.powered a {
+    color: #a7c6ff;
+    text-decoration: none;
+    border-bottom: 1px dashed var(--ring);
+}
+
+.city-picker select {
+    appearance: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--ring);
+    background: #0f2b63;
+    color: var(--text);
+    outline: none;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .25);
+}
+
+.cards {
+    max-width: 1100px;
+    margin: 24px auto 48px;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.placeholder {
+    text-align: center;
+    grid-column: 1/-1;
+    color: var(--muted);
+}
+
+.card {
+    background: #1c3e84;
+    border: 1px solid var(--ring);
+    border-radius: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+    padding: 14px;
+}
+
+.card .date {
+    font-weight: 700;
+    margin: 4px 0 8px;
+}
+
+.card .icon-wrap {
+    display: grid;
+    place-items: center;
+    height: 84px;
+}
+
+.card img {
+    width: 72px;
+    height: 72px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.card .desc {
+    margin: 8px 0 6px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #eaf1ff;
+}
+
+.card .temps {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.site-footer {
+    text-align: center;
+    padding: 18px;
+    color: var(--muted);
+    border-top: 1px solid var(--ring);
 }
