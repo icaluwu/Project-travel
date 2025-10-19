@@ -93,8 +93,24 @@ body {
 
 .card img {
     width: 72px;
-    height: 72px
+    height: auto;
+    /* pertahankan rasio */
+    aspect-ratio: auto;
+    /* bantu browser jaga proporsi */
+    image-rendering: -webkit-optimize-contrast;
+    object-fit: contain;
+    /* hindari terpotong */
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.25));
+    transition: transform 0.2s ease;
 }
+
+.card:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.35));
+}
+
 
 .card .desc {
     text-transform: uppercase;
